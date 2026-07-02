@@ -1,4 +1,4 @@
-<!-- ここに HTML のコードを書きましょう。index.html というファイルの名前は変更しないでください -->
+
 <!DOCTYPE html>
 <html lang="ja">
 
@@ -6,14 +6,114 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
   <title>ケンカン君</title>
 </head>
 
 <body>
-  <h1 class="title">健康管理システム</h1>
-  <h2 class="center">こんにちは、私はケンカン君。あなたの健康を守ります。</h2>
-  <img src="./images/example.png" alt="あざらし">
-  <script src="script.js"></script>
+  <h1 class="title">
+    健康管理システム＠ケンカン君
+  </h1>
+  <h2 class="center">こんにちは、私はケンカンくん。あなたの健康を守ります。( ꕹ )<br>
+あなたの食事バランスを可視化することができます。</h2>
+  <div class="food">
+    <h2>🍴✨食品登録</h2>
+    <div class="dropdown" data-placeholder="ーー主菜を選択ーー">
+    <button type="button" class="dropdown-button" aria-haspopup="listbox" aria-expanded="false"></button>
+    <div class="dropdown-panel" role="listbox" aria-multiselectable="true" tabindex="-1">
+      <label class="dropdown-item"><input type="checkbox" value="fish"> 焼き魚</label>
+      <label class="dropdown-item"><input type="checkbox" value="chicken"> 鶏の照り焼き</label>
+      <label class="dropdown-item"><input type="checkbox" value="mabodouhu"> 麻婆豆腐</label>
+      <label class="dropdown-item"><input type="checkbox" value="hannbagu"> ハンバーグ</label>
+    </div>
+
+
+  </div>
+ 
+  <div class="dropdown" data-placeholder="ーー副菜を選択ーー">
+    <button type="button" class="dropdown-button" aria-haspopup="listbox" aria-expanded="false"></button>
+    <div class="dropdown-panel" role="listbox" aria-multiselectable="true" tabindex="-1">
+      <label class="dropdown-item"><input type="checkbox" value="touhu"> 豆腐</label>
+      <label class="dropdown-item"><input type="checkbox" value="daikonn"> 大根の煮物</label>
+      <label class="dropdown-item"><input type="checkbox" value="goma"> ほうれん草のごま和え</label>
+      <label class="dropdown-item"><input type="checkbox" value="hijiki"> ひじき</label>
+    </div>
+  </div>
+ 
+  <div class="dropdown" data-placeholder="ーー主食を選択ーー">
+    <button type="button" class="dropdown-button" aria-haspopup="listbox" aria-expanded="false"></button>
+    <div class="dropdown-panel" role="listbox" aria-multiselectable="true" tabindex="-1">
+      <label class="dropdown-item"><input type="checkbox" value="rice"> ごはん</label>
+      <label class="dropdown-item"><input type="checkbox" value="sekihann"> 赤飯</label>
+      <label class="dropdown-item"><input type="checkbox" value="juurokukokumai"> 十六穀米</label>
+      <label class="dropdown-item"><input type="checkbox" value="mugigohann"> 麦ごはん</label>
+    </div>
+  </div>
+ 
+  <div class="dropdown" data-placeholder="ーー汁物を選択ーー">
+    <button type="button" class="dropdown-button" aria-haspopup="listbox" aria-expanded="false"></button>
+    <div class="dropdown-panel" role="listbox" aria-multiselectable="true" tabindex="-1">
+      <label class="dropdown-item"><input type="checkbox" value="miso"> 味噌汁(赤)</label>
+      <label class="dropdown-item"><input type="checkbox" value="clear"> 澄まし汁</label>
+      <label class="dropdown-item"><input type="checkbox" value="tonjiru"> 豚汁</label>
+      <label class="dropdown-item"><input type="checkbox" value="corn"> 味噌汁（白）</label>
+    </div>
+  </div>
+ 
+  <div class="controls">
+    <button id="resetBtn">リセット</button>
+    <button id="showSelected">選択項目を表示</button>
+    <button id="measureBtn">測定（栄養を計算）</button>
+  </div>
+  <style>
+      input[type="text"]{
+        font-size:250%;
+        width: 350px;
+      }
+    </style>
+  <input class="mokuhyo" type="text" pattern="^[0-9]+$" id="age" placeholder="年齢(歳)">
+  <input class="mokuhyo" type="text" pattern="^[0-9]+$" id="height" placeholder="身長(cm)">
+  <input class="mokuhyo" type="text" pattern="^[0-9]+$" id="weight" placeholder="体重(kg)">
+   <select class="mokuhyo">
+    <option>男性</option>
+    <option>女性</option>
+  </select>
+  <select id="goal" class="mokuhyo">
+      <option value="" selected disabled>目標を選択</option>
+      <option value="増量">増量</option>
+      <option value="減量">減量</option>
+      <option value="維持">維持</option>
+  </select>
+  </div>
+  </div>
+
+<div class="a"></div>
+
+  <!-- </div>
+  <div class="profil">
+    <style>
+      input[type="text"]{
+        font-size:250%;
+        width: 160px;
+      }
+    </style>
+  <input type="text" pattern="^[0-9]+$" id="age" placeholder="年齢(歳)">
+  <input type="text" pattern="^[0-9]+$" id="height" placeholder="身長(cm)">
+  <input type="text" pattern="^[0-9]+$" id="weight" placeholder="体重(kg)">
+   <select class="mokuhyo">
+    <option>男性</option>
+    <option>女性</option>
+  </select>
+  <select id="goal" class="mokuhyo">
+      <option value="" selected disabled>目標を選択</option>
+      <option value="増量">増量</option>
+      <option value="減量">減量</option>
+      <option value="維持">維持</option>
+  </select>
+  </div> -->
+  <div class="b">
+    <button id="btn" type="button">測定</button>
+  </div>
 </body>
 
 </html>
